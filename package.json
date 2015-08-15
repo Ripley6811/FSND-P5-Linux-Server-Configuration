@@ -1,0 +1,16 @@
+{
+  "name": "FSND-P5-Linux-Server-Configuration",
+  "version": "1.0.0",
+  "description": "Take a baseline installation of a Linux distribution on a virtual machine and prepare it to host web applications, to include installing updates, securing it from a number of attack vectors and installing/configuring web and database servers.",
+  "main": "index.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-readme": "^0.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jay William Johnson",
+  "license": "ISC"
+}
