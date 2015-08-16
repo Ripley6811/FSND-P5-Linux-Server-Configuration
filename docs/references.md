@@ -1,2 +1,3 @@
 - [How to setup SSH access to development environment](https://www.udacity.com/account#!/development_environment)
+- [Grunt getting started guide](http://gruntjs.com/getting-started)
 - [Grunt-readme documentation](https://github.com/jonschlinkert/grunt-readme/blob/master/DOCS.md)

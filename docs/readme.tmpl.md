@@ -6,6 +6,9 @@ Project managed by {%= author %}.
 
 {%= toc %}
 
+## How to connect
+{%= _.doc("connect.md") %}
+
 ## Overview
 {%= _.doc("overview.md") %}
 
