@@ -36,44 +36,56 @@
         # sudo apt-get upgrade
 
 2. Install `finger`.
+
         # sudo apt-get install finger
 
 3. Add new user called "grader" and fill in some user info.
+
         # sudo adduser grader
 
 4. Give the *grader* the permission to sudo
     - Open a new file with nano editor
+
             # nano /etc/sudoers.d/grader
     - Add permissions line to file in `sudoers.d` directory
+
             grader ALL=(ALL) NOPASSWD:ALL
 
 5. Create key pair
     - On **local machine**, generate key pair
+
             > ssh-keygen
     - Copy public key (`id_rsa.pub`) **from local machine to the server** `.ssh`
         directory as file `authorized_keys` using `nano` for editing.
+
             grader@ip-10-20-36-68:~$ mkdir .ssh
             grader@ip-10-20-36-68:~$ touch .ssh/authorized_keys
             grader@ip-10-20-36-68:~$ nano .ssh/authorized_keys
 
 6. Set permissions on directory and file
+
         $ chmod 700 .ssh
         $ chmod 644 .ssh/authorized_keys
 
 7. Set login to only accept key pair and not allow password.
     ("PasswordAuthentication" was already set to "no")
+
         $ nano /etc/ssh/sshd_config
 
 8. Change SSH port from 22 to 2200
     - Change `Port 22` near the top of `sshd_config` to `Port 2200` and save.
+
             $ sudo nano /etc/ssh/sshd_config
     - Restart the ssh service
+
             $ sudo service ssh restart
 
 9. Reboot the system for (security) updates to take effect
+
         $ sudo reboot
 
 10. Configuring default firewall settings
+
         $ sudo ufw default deny incoming
         $ sudo ufw default allow outgoing
         $ sudo ufw allow ssh
@@ -82,13 +94,16 @@
         $ sudo ufw deny 22
 
 11. Activate firewall when configuration settings are correct
+
         $ sudo ufw enable
 
 12. Configure the local timezone to UTC
+
         $ sudo dpkg-reconfigure tzdata
     - Select "None of the above", then select "UTC" near the bottom of the list.
 
 13. Install NTP and allow firewall port 123
+
         $ sudo apt-get install ntp
         $ sudo ufw allow 123/tcp
 
