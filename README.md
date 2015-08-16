@@ -11,13 +11,11 @@ Project managed by Jay William Johnson.
 
 
 ## How to connect
-####Public IP address
+####Public IP address: `52.25.36.217`
 
-        52.25.36.217
+####SSH port: `2200`
 
-####SSH port
-
-
+        ssh -i ~/.ssh/udacity_key.rsa root@52.25.36.217 -p 2200
 
 ####Application URL
 
@@ -77,6 +75,52 @@ Project managed by Jay William Johnson.
     - Add permissions line to file in `sudoers.d` directory
             grader ALL=(ALL) NOPASSWD:ALL
 
+5. Create key pair
+    - On **local machine**, generate key pair
+            > ssh-keygen
+    - Copy public key (`id_rsa.pub`) **from local machine to the server** `.ssh`
+        directory as file `authorized_keys` using `nano` for editing.
+            grader@ip-10-20-36-68:~$ mkdir .ssh
+            grader@ip-10-20-36-68:~$ touch .ssh/authorized_keys
+            grader@ip-10-20-36-68:~$ nano .ssh/authorized_keys
+
+6. Set permissions on directory and file
+        $ chmod 700 .ssh
+        $ chmod 644 .ssh/authorized_keys
+
+7. Set login to only accept key pair and not allow password.
+    ("PasswordAuthentication" was already set to "no")
+        $ nano /etc/ssh/sshd_config
+
+8. Change SSH port from 22 to 2200
+    - Change `Port 22` near the top of `sshd_config` to `Port 2200` and save.
+            $ sudo nano /etc/ssh/sshd_config
+    - Restart the ssh service
+            $ sudo service ssh restart
+
+9. Reboot the system for (security) updates to take effect
+        $ sudo reboot
+
+10. Configuring default firewall settings
+        $ sudo ufw default deny incoming
+        $ sudo ufw default allow outgoing
+        $ sudo ufw allow ssh
+        $ sudo ufw allow 2200/tcp
+        $ sudo ufw allow www
+        $ sudo ufw deny 22
+
+11. Activate firewall when configuration settings are correct
+        $ sudo ufw enable
+
+12. Configure the local timezone to UTC
+        $ sudo dpkg-reconfigure tzdata
+    - Select "None of the above", then select "UTC" near the bottom of the list.
+
+13. Install NTP and allow firewall port 123
+        $ sudo apt-get install ntp
+        $ sudo ufw allow 123/tcp
+
+
 
 
 
@@ -86,5 +130,7 @@ Project managed by Jay William Johnson.
 - [Grunt getting started guide](http://gruntjs.com/getting-started)
 - [Grunt-readme documentation](https://github.com/jonschlinkert/grunt-readme/blob/master/DOCS.md)
 - [How to switch users on Linux](http://unix.stackexchange.com/questions/3568/how-to-switch-between-users-on-one-terminal)
+- [How to reboot the system from ssh](http://askubuntu.com/questions/258297/should-i-always-restart-the-system-when-i-see-system-restart-required)
+- [Configuring timezone and NTP](https://www.digitalocean.com/community/tutorials/additional-recommended-steps-for-new-ubuntu-14-04-servers)
 
 

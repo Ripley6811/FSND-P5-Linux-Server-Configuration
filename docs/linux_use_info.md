@@ -38,6 +38,14 @@
 
 `sudo passwd -e grader` : Immediately expire "grader" password, will need to reset
 
+`sudo service ssh restart` : Restarts the ssh system (for login process changes)
+
+`chmod 765 ...` : Change permission for `...` file to 765 (rwxrw-r-x)
+
+`chgrp root ...` : Change group to root
+
+`chown root ...` : Change owner to root
+
 ##Terms
 
 `bin` : Files available to all users

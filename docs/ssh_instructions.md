@@ -15,6 +15,10 @@
 
         ssh -i ~/.ssh/udacity_key.rsa root@52.25.36.217
 
+5. After changing port from 22 to 2200, must specify port to connect
+
+        ssh -i ~/.ssh/udacity_key.rsa root@52.25.36.217 -p 2200
+
 
 ###Development Environment Information
 
