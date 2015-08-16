@@ -25,3 +25,26 @@
     Then ran `grunt` to build `README.md`.
 
         > grunt
+
+###II. Project steps
+
+1. Update all currently installed packages by calling `apt-get update` to
+    download list of package versions and then `apt-get upgrade` to actually
+    update system versions.
+
+        # sudo apt-get update
+        # sudo apt-get upgrade
+
+2. Install `finger`.
+        # sudo apt-get install finger
+
+3. Add new user called "grader" and fill in some user info.
+        # sudo adduser grader
+
+4. Give the *grader* the permission to sudo
+    - Open a new file with nano editor
+            # nano /etc/sudoers.d/grader
+    - Add permissions line to file in `sudoers.d` directory
+            grader ALL=(ALL) NOPASSWD:ALL
+
+

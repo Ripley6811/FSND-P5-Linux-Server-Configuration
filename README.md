@@ -11,9 +11,9 @@ Project managed by Jay William Johnson.
 
 
 ## How to connect
-####IP address
+####Public IP address
 
-
+        52.25.36.217
 
 ####SSH port
 
@@ -56,11 +56,35 @@ Project managed by Jay William Johnson.
 
         > grunt
 
+####II. Project steps
+
+1. Update all currently installed packages by calling `apt-get update` to
+    download list of package versions and then `apt-get upgrade` to actually
+    update system versions.
+
+        # sudo apt-get update
+        # sudo apt-get upgrade
+
+2. Install `finger`.
+        # sudo apt-get install finger
+
+3. Add new user called "grader" and fill in some user info.
+        # sudo adduser grader
+
+4. Give the *grader* the permission to sudo
+    - Open a new file with nano editor
+            # nano /etc/sudoers.d/grader
+    - Add permissions line to file in `sudoers.d` directory
+            grader ALL=(ALL) NOPASSWD:ALL
+
+
+
 
 
 ## References
 - [How to setup SSH access to development environment](https://www.udacity.com/account#!/development_environment)
 - [Grunt getting started guide](http://gruntjs.com/getting-started)
 - [Grunt-readme documentation](https://github.com/jonschlinkert/grunt-readme/blob/master/DOCS.md)
+- [How to switch users on Linux](http://unix.stackexchange.com/questions/3568/how-to-switch-between-users-on-one-terminal)
 
 

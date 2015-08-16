@@ -1,7 +1,7 @@
-- Launch your Virtual Machine with your Udacity account
-- Follow the instructions provided to SSH into your server
-- Create a new user named grader
-- Give the grader the permission to sudo
++ Launch your Virtual Machine with your Udacity account
++ Follow the instructions provided to SSH into your server
++ Create a new user named grader
++ Give the grader the permission to sudo
 - Update all currently installed packages
 - Change the SSH port from 22 to 2200
 - Configure the local timezone to UTC
