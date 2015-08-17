@@ -127,7 +127,9 @@ configuring the firewall and ports.
 
     - Change "`PermitRootLogin without-password`" to "`PermitRootLogin no`"
 
-    `$ sudo service ssh restart`
+    ```
+    $ sudo service ssh restart
+    ```
 
 ###III. Installing Apache, PostgreSQL and Python
 > This section walks through the process of installing the website and software
