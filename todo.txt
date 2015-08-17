@@ -5,7 +5,7 @@
 + Update all currently installed packages
 + Change the SSH port from 22 to 2200
 + Configure the local timezone to UTC
-- Install and configure Apache to serve a Python mod_wsgi application
++ Install and configure Apache to serve a Python mod_wsgi application
 - Install git, clone and setup your Catalog App project (from your GitHub repository from earlier in the Nanodegree program) so that it functions correctly when visiting your server’s IP address in a browser. Remember to set this up appropriately so that your .git directory is not publicly accessible via a browser!
 - ++ Firewall has been configured to monitor for repeat unsuccessful login attempts and appropriately bans attackers
 - ++ CRON scripts have been included to automatically manage package updates

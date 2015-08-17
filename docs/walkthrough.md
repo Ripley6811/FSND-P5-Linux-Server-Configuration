@@ -70,6 +70,7 @@ configuring the firewall and ports.
             grader@ip-10-20-36-68:~$ mkdir .ssh
             grader@ip-10-20-36-68:~$ touch .ssh/authorized_keys
             grader@ip-10-20-36-68:~$ nano .ssh/authorized_keys
+
         - NOTE: Text should be one line; remove newline characters.
 
 6. Set permissions on directory and file
@@ -114,6 +115,7 @@ configuring the firewall and ports.
 12. Configure the local timezone to UTC
 
         $ sudo dpkg-reconfigure tzdata
+
     - Select "None of the above", then select "UTC" near the bottom of the list.
 
 13. Install NTP and allow firewall port 123
@@ -131,11 +133,64 @@ configuring the firewall and ports.
     $ sudo service ssh restart
     ```
 
+
+
 ###III. Installing Apache, PostgreSQL and Python
 > This section walks through the process of installing the website and software
 to run it.
 
+1. Install Apache2
 
+        $ sudo apt-get install apache2
+
+2. Test editing the default main page
+
+        $ sudo nano /var/www/html/index.html
+
+3. Install Apache2 application handler (`apache2-mod-wsgi` doesn't exist?)
+
+        $ sudo apt-get install libapache2-mod-wsgi
+
+4. Configure Apache2 to handle WSGI module by adding
+    "`WSGIScriptAlias / /var/www/html/myapp.wsgi`" to the following file and
+    restarting apache:
+
+        $ sudo nano /etc/apache2/sites-enabled/000-default.conf
+        ...
+        $ sudo apache2ctl restart
+
+5. Install PostgreSQL and give grader access
+
+        $ sudo apt-get install postgresql
+        $ sudo -u postgres createuser --superuser grader
+
+6. Install git
+
+        $ sudo apt-get install git
+
+7. In *grader* home directoy clone Project 3 Flask application
+
+        $ git clone https://github.com/Ripley6811/FSND-P3-Item-Catalog
+
+    - This creates a folder called "FSND..." in the home directory
+
+8. Copy Catalog app to `/var/www/html`
+
+        $ sudo cp -a FSND-P3-Item-Catalog/vagrant/catalog /var/www/html
+
+9. Install "easy_install" and use it to install SQLAlchemy, etc.
+
+        $ sudo apt-get install python-setuptools
+        $ sudo easy_install sqlalchemy
+        $ sudo easy_install Flask
+        $ sudo apt-get install python-psycopg2
+
+10. Run database setup file in the project
+
+        .../catalog$ python database_setup.py
+        .../catalog$ python fake_data.py
+
+    - NOTE: Use `psql postgres` to log in to database
 
 ###IV. Adding Completely Udacious Extras
 > This section walks through the process of adding more security features like

@@ -48,6 +48,10 @@
 
 `sudo passwd root` : Change password for root (does not need to verify current one)
 
+`curl ipinfo.io/52.25.36.217` : Get info on IP 52.25.36.217
+
+`sudo cat /var/log/apache2/error.log` : Read the Apache error log
+
 ##Terms
 
 `bin` : Files available to all users

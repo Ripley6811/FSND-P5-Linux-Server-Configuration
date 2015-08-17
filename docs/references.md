@@ -10,3 +10,8 @@
 - [Troubleshooting problem with logging in as another user through SSH](http://askubuntu.com/a/16930)
 - [How to properly create an `authorized_keys` file](http://askubuntu.com/questions/539659/ssh-buffer-get-ret-trying-to-get-more-bytes-4-than-in-buffer-0)
 - [How to disable root SSH login](http://www.howtogeek.com/howto/linux/security-tip-disable-root-ssh-login-on-linux/)
+- [Package information on libapache2-mod-wsgi](https://packages.debian.org/unstable/python/libapache2-mod-wsgi)
+- [How to install git on ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04)
+- [Deploying Flask app on Apache](http://flask.pocoo.org/docs/0.10/deploying/mod_wsgi/#installing-mod-wsgi)
+- [Copy directory to different location on Linux](http://askubuntu.com/questions/80065/i-want-to-copy-a-directory-from-one-place-to-another-via-the-command-line)
+- [Set up PostgreSQL on Linux and user permissions](http://www.gotealeaf.com/blog/how-to-install-postgres-for-linux)
