@@ -176,14 +176,17 @@ to run it.
 
 8. Copy Catalog app to `/var/www/html`
 
-        $ sudo cp -a FSND-P3-Item-Catalog/vagrant/catalog /var/www/html
+        $ sudo cp -a FSND-P3-Item-Catalog/vagrant /var/www/html
 
-9. Install "easy_install" and use it to install SQLAlchemy, etc.
+9. Install "easy_install" and use it to install SQLAlchemy, Oauth2, etc.
 
         $ sudo apt-get install python-setuptools
         $ sudo easy_install sqlalchemy
         $ sudo easy_install Flask
         $ sudo apt-get install python-psycopg2
+        $ sudo easy_install oauth2
+        $ sudo easy_install google-api-python-client
+        $ sudo apache2ctl restart
 
 10. Run database setup file in the project
 
@@ -191,6 +194,9 @@ to run it.
         .../catalog$ python fake_data.py
 
     - NOTE: Use `psql postgres` to log in to database
+
+
+
 
 ###IV. Adding Completely Udacious Extras
 > This section walks through the process of adding more security features like

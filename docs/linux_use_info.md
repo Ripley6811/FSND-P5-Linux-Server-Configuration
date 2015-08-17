@@ -52,6 +52,10 @@
 
 `sudo cat /var/log/apache2/error.log` : Read the Apache error log
 
+`python -m site` : Show sys.path for python
+
+`sudo nano /var/www/html/myapp.wsgi` : Edit myapp.wsgi
+
 ##Terms
 
 `bin` : Files available to all users
