@@ -155,8 +155,7 @@ configuring the firewall and ports.
 
     - Change "`PermitRootLogin without-password`" to "`PermitRootLogin no`"
 
-
-        $ sudo service ssh restart
+    `$ sudo service ssh restart`
 
 ####III. Installing Apache, PostgreSQL and Python
 > This section walks through the process of installing the website and software
@@ -183,5 +182,6 @@ blocking unusual activity with the firewall and keeping all packages up-to-date.
 - [Convert private key for use with PuTTY](http://meinit.nl/using-your-openssh-private-key-in-putty)
 - [Troubleshooting problem with logging in as another user through SSH](http://askubuntu.com/a/16930)
 - [How to properly create an `authorized_keys` file](http://askubuntu.com/questions/539659/ssh-buffer-get-ret-trying-to-get-more-bytes-4-than-in-buffer-0)
+- [How to disable root SSH login](http://www.howtogeek.com/howto/linux/security-tip-disable-root-ssh-login-on-linux/)
 
 
