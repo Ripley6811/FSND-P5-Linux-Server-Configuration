@@ -46,6 +46,8 @@
 
 `chown root ...` : Change owner to root
 
+`sudo passwd root` : Change password for root (does not need to verify current one)
+
 ##Terms
 
 `bin` : Files available to all users

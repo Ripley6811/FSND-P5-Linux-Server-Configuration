@@ -5,3 +5,8 @@
 - [How to reboot the system from ssh](http://askubuntu.com/questions/258297/should-i-always-restart-the-system-when-i-see-system-restart-required)
 - [Configuring timezone and NTP](https://www.digitalocean.com/community/tutorials/additional-recommended-steps-for-new-ubuntu-14-04-servers)
 - [List of tutorials on configuring a server for different uses](https://www.udacity.com/course/viewer#!/c-ud299-nd/l-4331066009/m-4801089500)
+- [Sudoers file description](https://www.udacity.com/course/viewer#!/c-ud299-nd/l-4331066009/m-4801089470)
+- [Convert private key for use with PuTTY](http://meinit.nl/using-your-openssh-private-key-in-putty)
+- [Troubleshooting problem with logging in as another user through SSH](http://askubuntu.com/a/16930)
+- [How to properly create an `authorized_keys` file](http://askubuntu.com/questions/539659/ssh-buffer-get-ret-trying-to-get-more-bytes-4-than-in-buffer-0)
+- [How to disable root SSH login](http://www.howtogeek.com/howto/linux/security-tip-disable-root-ssh-login-on-linux/)

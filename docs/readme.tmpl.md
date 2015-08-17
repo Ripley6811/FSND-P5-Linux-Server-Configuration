@@ -12,8 +12,8 @@ Project managed by {%= author %}.
 ## Overview
 {%= _.doc("overview.md") %}
 
-## Steps
-{%= _.doc("steps.md") %}
+## Project Walkthrough
+{%= _.doc("walkthrough.md") %}
 
 ## References
 {%= _.doc("references.md") %}

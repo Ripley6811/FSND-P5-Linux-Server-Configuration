@@ -1,4 +1,6 @@
-###I. Setting up project and environment
+###I. Setting up project folder, environment and tools
+> This section shows the initial steps I took to connect to the development
+environment, set up the GitHub project folder.
 
 1. Set up new project folder using GitHub for Windows and selecting the "Node"
     **Git ignore** option. Selecting "Node" adds `.git*` files and `npm*` files
@@ -7,6 +9,8 @@
 
 2. Downloaded ssh private key for online *development environment* through
     Udacity at https://www.udacity.com/account#!/development_environment
+
+        > ssh -i ~/.ssh/udacity_key.rsa root@52.25.36.217
 
 3. Installed Grunt to project folder and `grunt-readme` for stitching a
     readme.md from templates. I like
@@ -26,7 +30,12 @@
 
         > grunt
 
-###II. Project steps
+6. Converted private key to `*.ppk` format for use with **PuTTY** ssh using
+    [puttygen.exe](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html?cm_mc_uid=08489393270114397828633&cm_mc_sid_50200000=1439782863).
+
+###II. Configuring SSH and UFW
+> This sections shows the steps for adding a user, setting permissions and
+configuring the firewall and ports.
 
 1. Update all currently installed packages by calling `apt-get update` to
     download list of package versions and then `apt-get upgrade` to actually
@@ -61,6 +70,7 @@
             grader@ip-10-20-36-68:~$ mkdir .ssh
             grader@ip-10-20-36-68:~$ touch .ssh/authorized_keys
             grader@ip-10-20-36-68:~$ nano .ssh/authorized_keys
+        - NOTE: Text should be one line; remove newline characters.
 
 6. Set permissions on directory and file
 
@@ -76,9 +86,13 @@
     - Change `Port 22` near the top of `sshd_config` to `Port 2200` and save.
 
             $ sudo nano /etc/ssh/sshd_config
-    - Restart the ssh service
+    - Restart the ssh service.
 
             $ sudo service ssh restart
+
+    - Log now requires the `-p` flag.
+
+            > ssh -i ~/.ssh/udacity_key.rsa root@52.25.36.217 -p2200
 
 9. Reboot the system for (security) updates to take effect
 
@@ -107,5 +121,22 @@
         $ sudo apt-get install ntp
         $ sudo ufw allow 123/tcp
 
+14. Turn off root SSH login
 
+        $ sudo nano /etc/ssh/sshd_config
+
+    - Change "`PermitRootLogin without-password`" to "`PermitRootLogin no`"
+
+
+        $ sudo service ssh restart
+
+###III. Installing Apache, PostgreSQL and Python
+> This section walks through the process of installing the website and software
+to run it.
+
+
+
+###IV. Adding Completely Udacious Extras
+> This section walks through the process of adding more security features like
+blocking unusual activity with the firewall and keeping all packages up-to-date.
 
