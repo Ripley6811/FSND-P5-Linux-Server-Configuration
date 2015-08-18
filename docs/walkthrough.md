@@ -195,10 +195,37 @@ to run it.
 
     - NOTE: Use `psql postgres` to log in to database
 
+11. Create role (user) called "catalog"
+
+        $ psql postgres
+        # CREATE USER catalog WITH PASSWORD 'c641111'
+        # grant all privileges on restaurants to catalog;
+        # \c restaurants
+        # grant all privileges on menu_item, menu_item_rating, "user", user_id_seq, menu_item_id_seq, menu_item_rating_id_seq, restaurant_id_seq to catalog;
+        $ sudo adduser catalog
+
+12. Added ip to authorized JavaScript origins in credentials through Google Developers Console.
+
+13. OAuth giving SSL error, used the [solution on stackoverflow](http://stackoverflow.com/a/19145997/1172891):
+
+        $  sudo chmod 644 /usr/local/lib/python2.7/dist-packages/httplib2-0.9.1-py2.7.egg/httplib2/cacerts.txt
+
+14. Ensure postgresql database does not allow remote connections, this should be
+    the default setting.
+
+        $ sudo nano /etc/postgresql/9.3/main/pg_hba.conf
+        $ sudo nano /etc/postgresql/9.3/main/postgresql.conf
 
 
 
 ###IV. Adding Completely Udacious Extras
 > This section walks through the process of adding more security features like
 blocking unusual activity with the firewall and keeping all packages up-to-date.
+
+1. Added two CRON jobs to "update" and (2 minutes later) to "upgrade"
+
+        $ crontab -e
+
+        0 5 * * 1 sudo apt-get update
+        2 5 * * 1 sudo apt-get upgrade
 

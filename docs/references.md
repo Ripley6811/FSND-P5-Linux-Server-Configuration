@@ -15,3 +15,8 @@
 - [Deploying Flask app on Apache](http://flask.pocoo.org/docs/0.10/deploying/mod_wsgi/#installing-mod-wsgi)
 - [Copy directory to different location on Linux](http://askubuntu.com/questions/80065/i-want-to-copy-a-directory-from-one-place-to-another-via-the-command-line)
 - [Set up PostgreSQL on Linux and user permissions](http://www.gotealeaf.com/blog/how-to-install-postgres-for-linux)
+- [Create Postgresql role](http://www.postgresql.org/docs/8.1/static/user-manag.html)
+- [Google Developers Console projects](https://console.developers.google.com/project)
+- [Solution to ssl.SSLError with Google OAuth2](http://stackoverflow.com/a/19145997/1172891)
+- [Enable (or disable) remote access to PostgreSQL database server](http://www.cyberciti.biz/tips/postgres-allow-remote-access-tcp-connection.html)
+- [Setting up CRON jobs](http://askubuntu.com/questions/2368/how-do-i-set-up-a-cron-job/2371#2371)

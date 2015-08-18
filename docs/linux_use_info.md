@@ -56,6 +56,10 @@
 
 `sudo nano /var/www/html/myapp.wsgi` : Edit myapp.wsgi
 
+`sudo nano /etc/postgresql/9.3/main/pg_hba.conf` : Edit PostgreSQL database access
+
+
+
 ##Terms
 
 `bin` : Files available to all users
