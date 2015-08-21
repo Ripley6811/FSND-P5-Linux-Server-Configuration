@@ -20,3 +20,6 @@
 - [Solution to ssl.SSLError with Google OAuth2](http://stackoverflow.com/a/19145997/1172891)
 - [Enable (or disable) remote access to PostgreSQL database server](http://www.cyberciti.biz/tips/postgres-allow-remote-access-tcp-connection.html)
 - [Setting up CRON jobs](http://askubuntu.com/questions/2368/how-do-i-set-up-a-cron-job/2371#2371)
+- [How to install and configure **Fail2ban**](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-14-04)
+- [Does Fail2ban port need to be changed?](http://serverfault.com/questions/382858/in-fail2ban-how-to-change-the-ssh-port-number)
+

@@ -232,9 +232,10 @@ to run it.
         # grant all privileges on menu_item, menu_item_rating, "user", user_id_seq, menu_item_id_seq, menu_item_rating_id_seq, restaurant_id_seq to catalog;
         $ sudo adduser catalog
 
-12. Added ip to authorized JavaScript origins in credentials through Google Developers Console.
+12. Added IP to authorized JavaScript origins in credentials through Google Developers Console.
 
-13. OAuth giving SSL error, used the [solution on stackoverflow](http://stackoverflow.com/a/19145997/1172891):
+13. OAuth giving SSL error, used a [solution on stackoverflow](http://stackoverflow.com/a/19145997/1172891)
+    to edit the permissions on the **cacerts.txt** file and fixed the problem.
 
         $  sudo chmod 644 /usr/local/lib/python2.7/dist-packages/httplib2-0.9.1-py2.7.egg/httplib2/cacerts.txt
 

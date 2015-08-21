@@ -204,9 +204,10 @@ to run it.
         # grant all privileges on menu_item, menu_item_rating, "user", user_id_seq, menu_item_id_seq, menu_item_rating_id_seq, restaurant_id_seq to catalog;
         $ sudo adduser catalog
 
-12. Added ip to authorized JavaScript origins in credentials through Google Developers Console.
+12. Added IP to authorized JavaScript origins in credentials through Google Developers Console.
 
-13. OAuth giving SSL error, used the [solution on stackoverflow](http://stackoverflow.com/a/19145997/1172891):
+13. OAuth giving SSL error, used a [solution on stackoverflow](http://stackoverflow.com/a/19145997/1172891)
+    to edit the permissions on the **cacerts.txt** file and fixed the problem.
 
         $  sudo chmod 644 /usr/local/lib/python2.7/dist-packages/httplib2-0.9.1-py2.7.egg/httplib2/cacerts.txt
 
@@ -228,4 +229,16 @@ blocking unusual activity with the firewall and keeping all packages up-to-date.
 
         0 5 * * 1 sudo apt-get update
         2 5 * * 1 sudo apt-get upgrade
+
+2. Firewall has been configured to block IPs after repeated failed login attempts.
+    I decided to install Fail2Ban
+    and followed [instructions found online](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-14-04)
+    to configure it. Edited the bantime and email address for reports in the`jail.local` file.
+
+        $ sudo apt-get install fail2ban
+        $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+        $ sudo nano /etc/fail2ban/jail.local
+        $ sudo service fail2ban stop
+        $ sudo service fail2ban start
+
 
