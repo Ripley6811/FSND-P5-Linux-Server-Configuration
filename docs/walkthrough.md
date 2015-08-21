@@ -44,7 +44,7 @@ configuring the firewall and ports.
         # sudo apt-get update
         # sudo apt-get upgrade
 
-2. Install `finger`.
+2. Install `finger` to display information about the system users.
 
         # sudo apt-get install finger
 
@@ -241,4 +241,15 @@ blocking unusual activity with the firewall and keeping all packages up-to-date.
         $ sudo service fail2ban stop
         $ sudo service fail2ban start
 
+3. Install monitoring application called **Munin** for automated feedback on
+    application status and system alerts. Following [this online guide for setting up](https://www.digitalocean.com/community/tutorials/how-to-install-munin-on-an-ubuntu-vps)
+    and [this one on email alerts](http://blog.edseek.com/archives/2006/07/13/munin-alert-email-notification/).
+
+        $ sudo apt-get munin
+        $ sudo nano /etc/munin/munin.conf  # Edit values, set up email alerts
+        $ sudo nano /etc/munin/apache.conf  # Edit values
+        $ sudo mkdir /var/www/munin
+        $ sudo chown munin:munin /var/www/muni  # Allow munin to edit
+        $ sudo service munin-node restart
+        $ sudo service apache2 restart
 

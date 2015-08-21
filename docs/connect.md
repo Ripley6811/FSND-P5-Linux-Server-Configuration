@@ -1,8 +1,15 @@
-###Public IP address: `52.25.36.217`
+###Public IP address:
 
-###SSH port: `2200`
+**`52.25.36.217`**
 
-        ssh -i ~/.ssh/udacity_key.rsa root@52.25.36.217 -p 2200
+###SSH port:
+
+**`2200`**
 
 ###Application URL
 
+http://52.25.36.217/
+
+###Application Monitoring URL (Munin)
+
+http://52.25.36.217/munin/MuninMonitor/MuninMonitor/index.html

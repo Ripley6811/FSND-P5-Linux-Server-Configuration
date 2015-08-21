@@ -58,7 +58,7 @@
 
 `sudo nano /etc/postgresql/9.3/main/pg_hba.conf` : Edit PostgreSQL database access
 
-
+`apt-cache policy ...` : Check version of downloadable content
 
 ##Terms
 
@@ -71,3 +71,7 @@
 `var` : Files that typically grow over time
 
 `sudo` : Do as substitute user
+
+`PPA` : "Personal Package Archive" is a repository for software not included by Ubuntu.
+
+`VPS` : "Virtual Private Network"

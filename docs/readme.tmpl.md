@@ -9,7 +9,7 @@ Project managed by {%= author %}.
 ## How to connect
 {%= _.doc("connect.md") %}
 
-## Overview
+## Overview & Configuration Summary
 {%= _.doc("overview.md") %}
 
 ## Project Walkthrough

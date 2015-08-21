@@ -5,24 +5,66 @@
 Project managed by Jay William Johnson.
 
 * [How to connect](#how-to-connect)
-* [Overview](#overview)
+* [Overview & Configuration Summary](#overview-configuration-summary)
 * [Project Walkthrough](#project-walkthrough)
 * [References](#references)
 
 
 ## How to connect
-####Public IP address: `52.25.36.217`
+####Public IP address:
 
-####SSH port: `2200`
+**`52.25.36.217`**
 
-        ssh -i ~/.ssh/udacity_key.rsa root@52.25.36.217 -p 2200
+####SSH port:
+
+**`2200`**
 
 ####Application URL
 
+http://52.25.36.217/
+
+####Application Monitoring URL (Munin)
+
+http://52.25.36.217/munin/MuninMonitor/MuninMonitor/index.html
 
 
 
-## Overview
+## Overview & Configuration Summary
+In this project, I configured a remote virtual machine to host a
+data-driven application and database server written using KnockoutJS
+and PostgreSQL.
+
+Highlights:
+- Ubuntu server
+    - Remote modification using SSH
+    - UFW (firewall) configuration
+    - Automated monitoring with *Munin*
+    - IP intrusion protection with *Fail2ban*
+- Data-driven web site
+    - Flask
+    - KnockoutJS
+    - Google OAuth2
+    - PostgreSQL
+
+####Installed packages:
+
+Package Name | Description
+-------------- | ------------
+**finger** | Displays information about the system users
+**ntp** | For synchronizing time over a network
+**apache2** | HTTP Server
+**libapache2-mod-wsgi** | For hosting Python applications on Apache2
+**postgresql** | Database server
+**git** | Version control system tools
+**python-setuptools** | Includes easy-install to facilitate installing Python packages
+**sqlalchemy** | ORM and SQL tools for Python
+**flask** | Microframework for website
+**python-psycopg2** | PostgreSQL adapter for Python
+**oauth2** | Authorization framework for using third-party login
+**google-api-python-client** | Google API for OAuth login
+**fail2ban** | Intrusion protection by IP banning
+**munin** | System monitoring and email notifications
+
 
 
 ## Project Walkthrough
@@ -72,7 +114,7 @@ configuring the firewall and ports.
         # sudo apt-get update
         # sudo apt-get upgrade
 
-2. Install `finger`.
+2. Install `finger` to display information about the system users.
 
         # sudo apt-get install finger
 
@@ -258,6 +300,29 @@ blocking unusual activity with the firewall and keeping all packages up-to-date.
         0 5 * * 1 sudo apt-get update
         2 5 * * 1 sudo apt-get upgrade
 
+2. Firewall has been configured to block IPs after repeated failed login attempts.
+    I decided to install Fail2Ban
+    and followed [instructions found online](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-14-04)
+    to configure it. Edited the bantime and email address for reports in the`jail.local` file.
+
+        $ sudo apt-get install fail2ban
+        $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+        $ sudo nano /etc/fail2ban/jail.local
+        $ sudo service fail2ban stop
+        $ sudo service fail2ban start
+
+3. Install monitoring application called **Munin** for automated feedback on
+    application status and system alerts. Following [this online guide for setting up](https://www.digitalocean.com/community/tutorials/how-to-install-munin-on-an-ubuntu-vps)
+    and [this one on email alerts](http://blog.edseek.com/archives/2006/07/13/munin-alert-email-notification/).
+
+        $ sudo apt-get munin
+        $ sudo nano /etc/munin/munin.conf  # Edit values, set up email alerts
+        $ sudo nano /etc/munin/apache.conf  # Edit values
+        $ sudo mkdir /var/www/munin
+        $ sudo chown munin:munin /var/www/muni  # Allow munin to edit
+        $ sudo service munin-node restart
+        $ sudo service apache2 restart
+
 
 
 
@@ -284,5 +349,10 @@ blocking unusual activity with the firewall and keeping all packages up-to-date.
 - [Solution to ssl.SSLError with Google OAuth2](http://stackoverflow.com/a/19145997/1172891)
 - [Enable (or disable) remote access to PostgreSQL database server](http://www.cyberciti.biz/tips/postgres-allow-remote-access-tcp-connection.html)
 - [Setting up CRON jobs](http://askubuntu.com/questions/2368/how-do-i-set-up-a-cron-job/2371#2371)
+- [How to install and configure **Fail2ban**](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-14-04)
+- [Does Fail2ban port need to be changed?](http://serverfault.com/questions/382858/in-fail2ban-how-to-change-the-ssh-port-number)
+- [How to install Munin monitoring software](https://www.digitalocean.com/community/tutorials/how-to-install-munin-on-an-ubuntu-vps)
+- [Setting up email alerts in Munin](http://blog.edseek.com/archives/2006/07/13/munin-alert-email-notification/)
+
 
 

@@ -22,4 +22,6 @@
 - [Setting up CRON jobs](http://askubuntu.com/questions/2368/how-do-i-set-up-a-cron-job/2371#2371)
 - [How to install and configure **Fail2ban**](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-14-04)
 - [Does Fail2ban port need to be changed?](http://serverfault.com/questions/382858/in-fail2ban-how-to-change-the-ssh-port-number)
+- [How to install Munin monitoring software](https://www.digitalocean.com/community/tutorials/how-to-install-munin-on-an-ubuntu-vps)
+- [Setting up email alerts in Munin](http://blog.edseek.com/archives/2006/07/13/munin-alert-email-notification/)
 
