@@ -1,5 +1,5 @@
 {
-  "name": "FSND-P5-Linux-Server-Configuration",
+  "name": "Linux Server Configuration Project",
   "version": "1.0.0",
   "description": "Take a baseline installation of a Linux distribution on a virtual machine and prepare it to host web applications, to include installing updates, securing it from a number of attack vectors and installing/configuring web and database servers.",
   "main": "index.js",

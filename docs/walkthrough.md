@@ -58,7 +58,7 @@ configuring the firewall and ports.
             # nano /etc/sudoers.d/grader
     - Add permissions line to file in `sudoers.d` directory
 
-            grader ALL=(ALL) NOPASSWD:ALL
+            grader ALL=(ALL:ALL) NOPASSWD:ALL
 
 5. Create key pair
     - On **local machine**, generate key pair
