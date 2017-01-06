@@ -309,7 +309,7 @@ to run it.
 
 
 
-####IV. Adding Completely Udacious Extras
+####IV. Extra Services
 > This section walks through the process of adding more security features like
 blocking unusual activity with the firewall and keeping all packages up-to-date.
 
