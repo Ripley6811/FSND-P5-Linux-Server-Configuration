@@ -17,15 +17,15 @@ Project managed by Jay William Johnson.
 
 ####SSH port:
 
-~~**`2200`**
+~~**`2200`**~~
 
 ####Application URL
 
-~~http://52.25.36.217/
+~~http://52.25.36.217/~~
 
 ####Application Monitoring URL (Munin)
 
-~~http://52.25.36.217/munin/MuninMonitor/MuninMonitor/index.html
+~~http://52.25.36.217/munin/MuninMonitor/MuninMonitor/index.html~~
 
 
 
